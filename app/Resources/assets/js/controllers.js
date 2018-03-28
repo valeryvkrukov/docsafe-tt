@@ -31,8 +31,8 @@ angular
 			password: '',
 			password_confirm: ''
 		};
-		vm.signUp = function() {
-			Auth.signUp(vm.credentials.username, vm.credentials.password);
+		vm.signUp = function(form) {
+			Auth.signUp(form, vm.credentials.username, vm.credentials.password);
 		};
 	})
 ;

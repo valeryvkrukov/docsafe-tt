@@ -33,7 +33,7 @@ class ApiController extends Controller
 		} catch(\Exception $e) {
 			return new JsonResponse([
 				'status' => 'fail',
-				'message' => $e->getMessage() . ' :: ' . $e->getFile() . ' :: ' . $e->getLine(),
+				'message' => $e->getMessage(),
 			]);
 		}
 		return new JsonResponse([

@@ -35,13 +35,15 @@ angular
 					console.log(err);
 				})
 			},
-			signUp: function(username, password) {
+			signUp: function(form, username, password) {
 				$http.post('/api/sign-up', {
 					username: username,
 					password: password
 				}).then(function(resp) {
 					if (resp.data.status == 'ok') {
 						$state.transitionTo('login');
+					} else {
+						form.errorMessage = resp.data.message;
 					}
 				}, function(err) {
 					console.log(err);
