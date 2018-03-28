@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>Docsafe Test Task</title>
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+        <link rel="stylesheet" href="{{ asset('front-app/css/angular-material.css') }}">
+        <link rel="stylesheet" href="{{ asset('front-app/css/styles.css') }}"/>
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <body ng-app="test-app" layout="column">
+        <md-toolbar layout="row" class="md-toolbar-tools">
+            <h1>Test task</h1>
+        </md-toolbar>
+        <div flex layout="row">
+            {% block body %}{% endblock %}
+        </div>
+        {% block javascripts %}
+        <script src="{{ asset('front-app/manifest.js') }}"></script>
+        <script src="{{ asset('front-app/vendor.js') }}"></script>
+        <script src="{{ asset('front-app/js/app.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
