@@ -1,0 +1,44 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <h2>Test task</h2>
+    </div>
+</md-toolbar>
+<md-content layout="row" layout-align="space-around" layout-padding="layout-padding" ng-cloak="ng-cloak" class="login-form">
+	<md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>
+					<span>Sign Up</span>
+				</h2>
+			</div>
+		</md-toolbar>
+		<md-card-content>
+			<form name="signUpForm">
+				<md-input-container class="md-block">
+					<label>Username</label>
+					<input type="text" name="username" ng-model="ctrl.credentials.username" placeholder="username" required=""/>
+					<div ng-messages="signUpForm.username.$error" role="alert" multiple="">
+						<div ng-message="required" class="my-message">Bad username.</div>
+					</div>
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label>Password</label>
+					<input type="password" name="password" ng-model="ctrl.credentials.password" placeholder="password" required=""/>
+					<div ng-messages="signUpForm.password.$error" role="alert" multiple="">
+						<div ng-message="required" class="my-message">Bad password.</div>
+					</div>
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label>Password confirmation</label>
+					<input type="password" name="password_confirm" ng-model="ctrl.credentials.password_confirm" compare-to="ctrl.credentials.password" placeholder="password confirmation" required=""/>
+					<div ng-messages="signUpForm.password.$error" role="alert" multiple="">
+						<div ng-message="required" class="my-message">Bad password.</div>
+						<div ng-message="compareTo" class="my-message">Passwords do not match</div>
+					</div>
+				</md-input-container>
+				<md-button ng-disabled="!signUpForm.$valid" ng-click="ctrl.signUp()" class="md-raised md-primary">&nbsp Sign Up &nbsp</md-button>
+				<md-button href="" ui-sref="login" class="md-raised md-primary">&nbsp Login &nbsp</md-button>
+			</form>
+		</md-card-content>
+	</md-card>
+</md-content>

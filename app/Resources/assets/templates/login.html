@@ -1,0 +1,36 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <h2>Test task</h2>
+    </div>
+</md-toolbar>
+<md-content layout="row" layout-align="space-around" layout-padding="layout-padding" ng-cloak="ng-cloak" class="login-form">
+	<md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>
+					<span>Sign In</span>
+				</h2>
+			</div>
+		</md-toolbar>
+		<md-card-content>
+			<form name="signInForm">
+				<md-input-container class="md-block">
+					<label>Username</label>
+					<input type="text" name="username" ng-model="ctrl.credentials.username" placeholder="username" required=""/>
+					<div ng-messages="signInForm.username.$error" role="alert" multiple="">
+						<div ng-message="required" class="my-message">Bad username.</div>
+					</div>
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label>Password</label>
+					<input type="password" name="password" ng-model="ctrl.credentials.password" placeholder="password" required=""/>
+					<div ng-messages="signInForm.password.$error" role="alert" multiple="">
+						<div ng-message="required" class="my-message">Bad password.</div>
+					</div>
+				</md-input-container>
+				<md-button ng-disabled="!signInForm.$valid" ng-click="ctrl.signIn()" class="md-raised md-primary">&nbsp Login &nbsp</md-button>
+				<md-button href="" ui-sref="register" class="md-raised md-primary">&nbsp Sign Up &nbsp</md-button>
+			</form>
+		</md-card-content>
+	</md-card>
+</md-content>
